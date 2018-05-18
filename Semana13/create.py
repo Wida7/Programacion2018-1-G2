@@ -1,17 +1,17 @@
 from Semana13.Clases.Hotel import Hotel
 from Semana13.Clases.Habitacion import Habitacion
 from Semana13.Clases.Reserva import Reserva
-"""Importamos nuestras clases para relacionarlos por medio de funciones""""
+"""Importamos nuestras clases para relacionarlos por medio de funciones"""
 from datetime import *
 """Importamos para utilizar el formato de fechas"""
 from Semana13.db_handler import *
-"""Importamos nuestra bases de datos""""
+"""Importamos nuestra bases de datos"""
 
 def crear_reservas(hoteles):
     """
     Valida la reserva en cada habitacion
     
-    :param hoteles: el nombre del hotel
+    :param hoteles: el nombre del hotel (str --> str)
     :return: pasos a seguir para la reserva (int to date)
     :ValueError: Si el hotel no es valido, si la fecha no esta bien digitada, si ya hay alguna reserva en esa fecha.
     """
