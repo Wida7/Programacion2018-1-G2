@@ -1,5 +1,8 @@
 from Semana13.Clases.Reserva import Reserva
-""" Importamos nuestra clase de reserva"""
+""" Importamos nuestra clase de reserva, la cual nos permite:
+Validar las reservas que sean posibles,
+Conocer las caracteristicas de las habitaciones.
+"""
 
 class Habitacion:
     """ Representa la clase de una habitacion, y su relacion con las reservas"""
@@ -21,7 +24,9 @@ class Habitacion:
        """
         Crea una nueva instancia para reserva, y valida las reservas de la habitacion
         
-        :param nueva_reserva: Recibe una reserva y valida si esta es viable
+        :param nueva_reserva: Recibe una reserva y valida si esta es viable.
+        :return: Validacion de la reserva.
+        :ValueError: Si la reserva no se encuentra disponible o esta mal ingresada.
         """        
         for reserva in self.reservas:
             if(reserva.coliciona(nueva_reserva)):
