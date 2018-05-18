@@ -11,10 +11,11 @@ class Hotel:
 
     def __init__(self, nombre, estrellas, servicios):
         """
-        Crea una nueva instancia de hotel
-        :param nombre: nombre del hotel
-        :param estrellas: estrellas del hotel
-        :param servicios: prestacion de servicios de la habitacion
+        Crea una nueva instancia de hotel 
+        
+        :param nombre: nombre del hotel (str --> str)
+        :param estrellas: estrellas del hotel (int --> int)
+        :param servicios: prestacion de servicios de la habitacion (str --> str)
         :return: representacion del hotel
         """
         self.nombre = nombre
