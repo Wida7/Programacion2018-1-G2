@@ -12,7 +12,7 @@ class Habitacion:
 
     def __init__(self, numero, tipo):
         """
-        Crea una nueva instancia de Habitaciones
+        Crea una nueva instancia de Habitaciones (int --> str)
         
         :param numero: El numero de la habitacion
         :param tipo: La caracteristica de la habitacion   
@@ -24,7 +24,7 @@ class Habitacion:
     def reservar(self, nueva_reserva):
        """
         Traemos nuestra funcion de reserva, la cual nos valida la disponibilidad
-        de la habitacion
+        de la habitacion (int --> date)
         
         :param nueva_reserva: Recibe una reserva.
         :return: Validacion de la reserva.
