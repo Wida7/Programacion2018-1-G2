@@ -1,12 +1,13 @@
 from Semana13.Clases.Habitacion import Habitacion
-"""Importamos nuestra clase de habitacion la cual nos permite
-relacionar nuestra clase de hotel con habitaciones
+"""Importamos nuestra clase de habitacion la cual nos permite:
+relacionarl los hoteles con las habitaciones.
 """
 
 class Hotel:
     """Representa nuestro hotel"""
 
     habitaciones = []
+    """Crea la lista de habitaciones, para relacionar con cada hotel"""
 
     def __init__(self, nombre, estrellas, servicios):
         """
@@ -14,7 +15,7 @@ class Hotel:
         :param nombre: nombre del hotel
         :param estrellas: estrellas del hotel
         :param servicios: prestacion de servicios de la habitacion
-        :return: representacion de las habitaciones
+        :return: representacion del hotel
         """
         self.nombre = nombre
         self.estrellas = estrellas
