@@ -12,10 +12,10 @@ class Reserva:
 
         Crea una nueva instancia de reserva
 
-        :param cliente: nombre del cliente
-        :param cedula: id del cliente
-        :param fecha_inicio: La fecha inicial de la reserva
-        :param fecha_fin: Fecha final de reserva
+        :param cliente: nombre del cliente (str --> str)
+        :param cedula: id del cliente (int --> int)
+        :param fecha_inicio: La fecha inicial de la reserva (int --> date)
+        :param fecha_fin: Fecha final de reserva (int --> date)
         :return: la reserva realizada
         :ValueError: Si la fecha inicial es anterior a la actual, si la fecha inicial es mayor a la final.
         """
