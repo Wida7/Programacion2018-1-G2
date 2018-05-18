@@ -1,10 +1,18 @@
 from Semana13.Clases.Hotel import Hotel
 from Semana13.Clases.Habitacion import Habitacion
 from Semana13.Clases.Reserva import Reserva
+"""impotamos nuestras clases para las relaciones"""
 from datetime import *
+"""importamos para utilizar el formato dde fecha"""
 from Semana13.db_handler import *
+"""importamos para relacionar las funciones de bases de datos"""
 
 def ver_reservas(hoteles):
+    """
+    nos permite ver las reservas
+    :param hoteles: ver los hoteles disponibles (int --> str)
+    :return: ver las reservas (int --> str)
+    """
     while True:
         print('Los hoteles disponibles son')
         for i in range(0, len(hoteles)):
