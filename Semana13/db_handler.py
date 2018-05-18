@@ -9,7 +9,7 @@ def cargar_hoteles(file):
     """
     Creamos una base de datos en un ducumento txt conforme al objeto de hoteles
     
-    :param file: hoteles
+    :param file: hoteles (str --> str)
     :return: abrir base de datos(txt) de hoteles
     """
     hoteles_resultante = []
@@ -32,7 +32,7 @@ def cargar_habitaciones(file):
     """
     Creamos una base de datos en un ducumento txt conforme al objeto de habitaciones
     
-    :param file: habitaciones
+    :param file: habitaciones (str --> str)
     :return: abrir base de datos(txt) de habitaciones
     """
     habitaciones_resultantes = []
@@ -53,7 +53,7 @@ def cargar_reservas(file):
     """
     Creamos una base de datos en un ducumento txt conforme al objeto de reservas
     
-    :param file: reservas
+    :param file: reservas (str --> str)
     :return: abrir base de datos(txt) de habitaciones
     """
     
