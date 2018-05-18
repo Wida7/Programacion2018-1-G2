@@ -1,18 +1,31 @@
 from Semana13.Clases.Hotel import Hotel
 from Semana13.Clases.Habitacion import Habitacion
 from Semana13.Clases.Reserva import Reserva
+"""Importamos nuestras clases para relacionarlos por medio de funciones""""
 from datetime import *
+"""Importamos para utilizar el formato de fechas"""
 from Semana13.db_handler import *
+"""Importamos nuestra bases de datos""""
 
 def crear_reservas(hoteles):
+    """
+    Valida la reserva en cada habitacion
+    
+    :param hoteles: el nombre del hotel
+    :return: pasos a seguir para la reserva (int to date)
+    :ValueError: Si el hotel no es valido, si la fecha no esta bien digitada, si ya hay alguna reserva en esa fecha.
+    """
     while True:
-
+        """ Valida nuestro numero de hoteles"""
+       
         # Mostrar los hoteles disponibles
         for i in range(0, len(hoteles)):
             print(i, '. ', hoteles[i])
 
         # Preguntar el hotel
         while True:
+            """Permite seleccionar uno de ellos y arroja la informacion del elejido"""
+            
             try:
                 hotel_seleccionado = int(input('Seleccione el '
                                            'numero del hotel\n'))
@@ -23,7 +36,7 @@ def crear_reservas(hoteles):
         print('Seleccionó', hoteles[hotel_seleccionado])
         print('Las habitaciones disponibles son')
 
-        # Mostrar las habitaciones disponibles
+        # Mostrar las habitaciones disponibles, cuenta las datos de la lista
         hotel_seleccionado = hoteles[hotel_seleccionado]
         for i in range(0, len(hotel_seleccionado.habitaciones)):
             print(i, '. ', hotel_seleccionado.habitaciones[i])
@@ -45,6 +58,8 @@ def crear_reservas(hoteles):
         cedula_cliente = input('Ingrese su cedula\n')
         while True:
             try:
+                """Cambia el formato de int a date"""
+                
                 fecha_inicio_reserva = datetime.strptime(
                     input('Ingrese la fecha inicial en formato dd/mm/yyyy\n'),
                     '%d/%m/%Y').date()
@@ -53,6 +68,7 @@ def crear_reservas(hoteles):
                     '%d/%m/%Y').date()
 
                 # Generar la reserva
+                """Valida los datos de la reserva"""
                 reserva = Reserva(nombre_cliente,
                                   cedula_cliente,
                                   fecha_inicio_reserva,
@@ -63,6 +79,7 @@ def crear_reservas(hoteles):
                 print('No hay disponibilidad para las fechas seleccionadas')
 
         # Guardar la reserva
+        """Guarda la reserva en el txt trayendo la funcion"""
         guardar_reserva(hotel_seleccionado,
                         habitacion_seleccionada,
                         reserva)
@@ -70,4 +87,5 @@ def crear_reservas(hoteles):
         continuar = input('Desea agregar otra reserva? S/N\n')
 
         if (continuar.upper() == 'N'):
+            """Pregunta si desea realizar otra reserva y lo redirige al inicio de ser afirmativo"""
             break
