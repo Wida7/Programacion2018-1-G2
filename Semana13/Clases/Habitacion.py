@@ -1,13 +1,14 @@
 from Semana13.Clases.Reserva import Reserva
 """ Importamos nuestra clase de reserva, la cual nos permite:
-Validar las reservas que sean posibles,
-Conocer las caracteristicas de las habitaciones.
+relacionar la disponibilidad de la habitacion entorno a los parametros de la reservas.
+por medio de la funcion (reserva)
 """
 
 class Habitacion:
-    """ Representa la clase de una habitacion, y su relacion con las reservas"""
+    """ Representa la clase de una habitacion, y su relacion con las reserva(s)"""
 
     reservas = []
+    """nuestra lista de reservas para cada habitacion"""
 
     def __init__(self, numero, tipo):
         """
@@ -22,13 +23,18 @@ class Habitacion:
 
     def reservar(self, nueva_reserva):
        """
-        Crea una nueva instancia para reserva, y valida las reservas de la habitacion
+        Traemos nuestra funcion de reserva, la cual nos valida la disponibilidad
+        de la habitacion
         
-        :param nueva_reserva: Recibe una reserva y valida si esta es viable.
+        :param nueva_reserva: Recibe una reserva.
         :return: Validacion de la reserva.
-        :ValueError: Si la reserva no se encuentra disponible o esta mal ingresada.
+        :ValueError: Si la reserva no se encuentra disponible, si esta mal ingresada.
         """        
         for reserva in self.reservas:
+            """Nos valida, si la reserva ingresada ya esta "reservada" en nuestro documento 
+            txt realizado en la funcion de reserva anteriormente,
+            de lo contrario, lo guarda en una lista en formato de fecha.
+            """
             if(reserva.coliciona(nueva_reserva)):
                 raise ValueError('La habitación no se'
                                  ' encuentra disponible '
